@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NbAuthService } from '@nebular/auth';
+import { NbToastrService } from '@nebular/theme';
+//import { NbMenuItem } from '@nebular/theme';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-dashboard';
-}
+   title = 'my-dashboard';
+   
+
+  
+  }
+
+   
+  
+
+  
+
+

@@ -1,0 +1,90 @@
+<nb-layout>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>
+        <h3>Register</h3>
+      </nb-card-header>
+      <nb-card-body>
+        <form #registerForm="ngForm" (ngSubmit)="register()">
+          <!-- First Name -->
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              nbInput
+              id="firstName"
+              name="firstName"
+              placeholder="Enter your first name"
+              [(ngModel)]="user.firstName"
+              required
+              autocomplete="given-name"
+            />
+          </div>
+          <!-- Last Name -->
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              nbInput
+              id="lastName"
+              name="lastName"
+              placeholder="Enter your last name"
+              [(ngModel)]="user.lastName"
+              required
+              autocomplete="family-name"
+            />
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              nbInput
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              [(ngModel)]="user.email"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              nbInput
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              [(ngModel)]="user.password"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              nbInput
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              [(ngModel)]="user.confirmPassword"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+          <!-- Submit Button -->
+          <button nbButton status="primary" type="submit">Register</button>
+        </form>
+        <!-- Login Link -->
+        <div class="login-link">
+          <p>
+            Already have an account? 
+            <a [routerLink]="['/auth/login']">Login here</a>
+          </p>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

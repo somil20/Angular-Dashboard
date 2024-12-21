@@ -1,0 +1,109 @@
+/* Center the card on the page */
+nb-card {
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    @media (max-width: 576px) {
+      margin: 20px auto;
+      padding: 15px;
+    }
+  }
+  
+  /* Card header styling */
+  nb-card-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3366ff;
+    margin-bottom: 20px;
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #3366ff;
+      margin: 10px auto 0;
+    }
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 20px;
+  
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #222b45;
+      font-size: 14px;
+    }
+  
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.2s;
+  
+      &:focus {
+        border-color: #3366ff;
+      }
+    }
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3366ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  
+    &:hover {
+      background-color: #274bdb;
+    }
+  
+    &:disabled {
+      background-color: #d1d5db;
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Additional utilities */
+  .align-center {
+    text-align: center;
+  }
+  
+  .text-muted {
+    color: #8f9bb3;
+  }
+  
+  .margin-top {
+    margin-top: 20px;
+  }
+  .login-link {
+    margin-top: 1rem;
+    text-align: center;
+  
+    a {
+      color: #1a73e8; /* Nebular primary color */
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  

@@ -1,0 +1,56 @@
+.dashboard-layout {
+    display: flex;
+    flex-direction: row; /* Sidebar and main content side by side by default */
+    height: 100vh;
+    overflow: hidden; /* Prevent unwanted scrollbars */
+  }
+  
+  nb-layout-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+  }
+  
+  nb-sidebar {
+    position: fixed;
+    top: 64px; /* Adjust based on the header height */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 64px); /* Full height minus the header height */
+    background-color: #d3cece;
+    color: #ffffff;
+    border-right: 1px solid #dddddd;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for responsive toggling */
+  }
+  
+  /* Sidebar hidden on smaller screens by default */
+  @media (max-width: 768px) {
+    nb-sidebar {
+      transform: translateX(-100%); /* Hide the sidebar */
+    }
+  
+    nb-sidebar.open {
+      transform: translateX(0); /* Show the sidebar when toggled */
+    }
+  
+    .main-content {
+      margin-left: 0; /* Remove left margin when sidebar is hidden */
+    }
+  }
+  
+  .main-content {
+    margin-top: 64px;
+    margin-left: 250px;
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+  
+    @media (max-width: 768px) {
+      margin-left: 0; /* Adjust to occupy full width when sidebar is hidden */
+    }
+  }
+  
