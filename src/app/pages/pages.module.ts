@@ -10,6 +10,10 @@ import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { ProductComponent } from './product/product.component';
+import { ServiceComponent } from './service/service.component';
+import { ClientComponent } from './client/client.component';
+import { BookingComponent } from './booking/booking.component';
+import { VendordetailComponent } from './vendor/vendordetail/vendordetail.component';
 
 
 
@@ -19,6 +23,10 @@ import { ProductComponent } from './product/product.component';
     DashboardComponent,
     VendorComponent,
     ProductComponent,
+    ServiceComponent,
+    ClientComponent,
+    BookingComponent,
+    VendordetailComponent,
     
   ],
   imports: [

@@ -1,0 +1,44 @@
+<div class="appointment-booking-container">
+    <h2>Book Your Appointment</h2>
+    <form class="appointment-booking-form">
+      <!-- Service Selection -->
+      <div class="form-group">
+        <label for="service">Select Service:</label>
+        <select id="service" class="form-control" #service>
+          <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+        </select>
+      </div>
+  
+      <!-- Slot Selection -->
+      <div class="form-group">
+        <label for="timeslot">Select Time Slot:</label>
+        <select id="timeslot" class="form-control" #slot>
+          <option *ngFor="let slot of slots" [value]="slot" [disabled]="!slot.available">
+            {{ slot.date }} | {{ slot.time }} - {{ slot.available ? 'Available' : 'Booked' }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Contact Information -->
+      <div class="form-group">
+        <label for="contact">Contact Information:</label>
+        <input
+          type="text"
+          id="contact"
+          class="form-control"
+          placeholder="Enter your contact number"
+          #contact
+        />
+      </div>
+  
+      <!-- Book Appointment Button -->
+      <button
+        type="button"
+        class="book-btn"
+        (click)="onBookAppointment(service.value, slot.value, contact.value)"
+      >
+        Book Appointment
+      </button>
+    </form>
+  </div>
+  

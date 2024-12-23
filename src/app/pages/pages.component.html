@@ -1,12 +1,14 @@
-<div class="dashboard-layout">
-    <!-- Sidebar for Menu -->
-    <nb-sidebar tag="menu-sidebar" state="compacted" responsive>
-      <nb-menu [items]="menu"></nb-menu>
-    </nb-sidebar>
-  
-    <!-- Main Content Area -->
-    <div class="main-content">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  
+<nb-layout>
+  <nb-layout-header fixed>
+    <h2>Mech Buddy</h2>
+    <nb-user name="User Name"></nb-user>
+  </nb-layout-header>
+
+  <nb-sidebar tag="menu-sidebar" class="menu-sidebar" responsive>
+    <nb-menu [items]="menu"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

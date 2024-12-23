@@ -1,9 +1,13 @@
-<p>vendor works!</p>
-<nb-card size="small">
-    <nb-list>
-      <nb-list-item *ngFor="let user of users">
-        <nb-user [name]="user.name" [title]="user.title">
-        </nb-user>
+<nb-card>
+  <nb-card-header>
+    <h3 class="card-title">Vendor List</h3>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-list class="vendor-list">
+      <nb-list-item *ngFor="let vendor of vendors" class="vendor-item">
+        <nb-user [name]="vendor.name" [title]="vendor.title" [picture]="vendor.picture"></nb-user>
+        <button nbButton status="info" (click)="viewDetails(vendor)">View Details</button>
       </nb-list-item>
     </nb-list>
-  </nb-card>
+  </nb-card-body>
+</nb-card>

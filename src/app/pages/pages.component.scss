@@ -1,0 +1,133 @@
+@import '../pages/themes';
+
+@include nb-install-component() {
+  ::ng-deep router-outlet + * {
+    display: block;
+    animation: fade 1s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  nb-layout {
+    height: 100vh;
+  }
+
+  nb-layout-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  nb-sidebar {
+    width: 300px; /* Default sidebar width */
+    position: fixed;
+    top: 60px; /* Matches the header height */
+    height: calc(100vh - 60px); /* Full height minus header height */
+    z-index: 1000;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+    background: #f7f9fc;
+
+    &.collapsed {
+      width: 80px; /* Collapsed sidebar width */
+    }
+
+    &.hidden {
+      transform: translateX(-300px); /* Hide sidebar completely */
+    }
+  }
+
+  nb-layout-column {
+    margin-left: 300px; /* Default margin for sidebar */
+    padding: 1rem;
+    margin-top: 10px; /* Matches header height */
+    box-sizing: border-box;
+    overflow: auto;
+    transition: margin-left 0.3s ease-in-out;
+
+    nb-sidebar.collapsed + & {
+      margin-left: 50px; /* Adjust margin for collapsed sidebar */
+    }
+
+    nb-sidebar.hidden + & {
+      margin-left: 0; /* Full width for hidden sidebar */
+    }
+  }
+
+  nb-menu {
+    margin-top: 0;
+    font-size: 1.2rem; /* Adjusted font size for visibility */
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  nb-user {
+    margin-left: auto;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    nb-sidebar {
+      width: 80px; /* Collapsed state for medium screens */
+    }
+
+    nb-layout-column {
+      margin-left: 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    nb-sidebar {
+      transform: translateX(-300px); /* Hide sidebar on small screens */
+    }
+
+    nb-layout-column {
+      margin-left: 0; /* Full width for small screens */
+    }
+
+    nb-menu ::ng-deep nb-menu-item .title {
+      display: none; /* Hide titles for better layout */
+    }
+
+    nb-menu ::ng-deep nb-menu-item .icon {
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    nb-sidebar {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 60px;
+      transform: translateY(-100%); /* Hide completely */
+      z-index: 1200;
+    }
+
+    nb-sidebar.open {
+      transform: translateY(0); /* Slide down when open */
+    }
+  }
+}

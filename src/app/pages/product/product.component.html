@@ -1,1 +1,27 @@
-<p>product works!</p>
+<div class="product-container">
+    <nb-card>
+      <nb-card-header>
+        <h3 class="card-title">Automobile Services</h3>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="product-grid">
+          <div *ngFor="let product of products" class="product-card">
+            <nb-card>
+              <nb-card-header>
+                <h4>{{ product.name }}</h4>
+              </nb-card-header>
+              <nb-card-body>
+                <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+                <p>{{ product.description }}</p>
+              </nb-card-body>
+              <nb-card-footer>
+                <button nbButton status="info">Book Now</button>
+                <span class="price">{{ product.price }}</span>
+              </nb-card-footer>
+            </nb-card>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  
